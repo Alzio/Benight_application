@@ -93,6 +93,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ForgetPassword.xaml.cs">
+      <DependentUpon>ForgetPassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ParseUsersData.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -110,12 +113,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ToDoEv.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="ForgetPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +181,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="README_FIRST.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.0.intellisense.js" />
@@ -182,6 +191,10 @@
     <Content Include="readme.htm">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -190,11 +203,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Facebook">
-      <HintPath>..\packages\Facebook.6.8.0\lib\wp8\Facebook.dll</HintPath>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\wp8\Facebook.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Facebook.Client">
       <HintPath>..\packages\Facebook.Client.0.9.91-alpha\lib\wp8\Facebook.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPToolkit.4.2013.06.11\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Parse, Version=1.3.3.0, Culture=neutral, PublicKeyToken=ba48c3a442de616e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -208,6 +227,18 @@
       <HintPath>..\packages\PropertyChanged.Fody.1.49.0\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SidebarWP8">
+      <HintPath>..\packages\SidebarWP8.1.0.1\lib\windowsphone8\SidebarWP8.dll</HintPath>
+    </Reference>
+    <Reference Include="SlideView.Library">
+      <HintPath>..\packages\SlideView.1.4.2\lib\wp8\SlideView.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Benight_BLLPhone\Benight_BLLPhone.csproj">
+      <Project>{c3e0cf24-54c8-46bc-9295-944da56ea159}</Project>
+      <Name>Benight_BLLPhone</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
