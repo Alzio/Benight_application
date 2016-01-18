@@ -27,19 +27,21 @@
             <Grid.Background>
                 <ImageBrush />
             </Grid.Background>
-            <TextBox Height="76" HorizontalAlignment="Left" Margin="28,111,0,0" Name="logUserName" Text="" VerticalAlignment="Top" Width="422" />
-            <TextBox Height="72" HorizontalAlignment="Left" Margin="28,254,0,0" Name="logPassword" Text="" VerticalAlignment="Top" Width="422" />
-            <Button Content="Sign in " Height="72" HorizontalAlignment="Left" Margin="251,361,0,0" Name="buttonSignIn" VerticalAlignment="Top" Width="180" Click="buttonSignIn_Click" />
-            <Button Content="Facebook" Height="72" HorizontalAlignment="Left" Margin="251,450,0,0" Name="buttonFacebook" VerticalAlignment="Top" Width="180" Click="buttonSignIn_Click" />
+            <TextBox Height="76" HorizontalAlignment="Left" Margin="28,111,0,0" Name="logUserName" VerticalAlignment="Top" Width="422" />
+            <!--<TextBox Height="72" HorizontalAlignment="Left" Margin="28,254,0,0" Name="logPassword" VerticalAlignment="Top" Width="422" />-->
+            <PasswordBox Height="72" HorizontalAlignment="Left" Margin="28,254,0,0" Name="logPassword2" VerticalAlignment="Top" Width="422" />
+            <Button Content="Se connecter" Height="72" HorizontalAlignment="Left" Margin="39,339,0,0" Name="buttonSignIn" VerticalAlignment="Top" Width="207" Click="buttonSignIn_Click" />
+            <Button Content="Facebook" Height="72" HorizontalAlignment="Left" Margin="251,339,0,0" Name="buttonFacebook" VerticalAlignment="Top" Width="180" Click="buttonSignIn_Click"  />
+            <Button Content="Forget password ?" BorderThickness="0" FontSize="15" Height="56" HorizontalAlignment="Left" BorderBrush="Transparent" Margin="39,402,0,0" Name="buttonForget" VerticalAlignment="Top" Width="180" Click="buttonForget_Click" />
             <!--<phone:WebBrowser x:Name="Browser" Visibility="{Binding browser}" />-->
 
             <!--<Grid x:Name="ContentGrid" Grid.Row="1">
                 <phone:WebBrowser HorizontalAlignment="Left" Margin="20,50,0,0" Name="browser" VerticalAlignment="Top" Height="500" Width="430" />
             </Grid>-->
 
-            <Button Content="Create New Account" Height="72" HorizontalAlignment="Left" Margin="33,549,0,0" Name="buttonCreateNewAccount" VerticalAlignment="Top" Width="398" Click="buttonCreateNewAccount_Click" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="46,75,0,0" Name="textBlock1" Text="User Name" VerticalAlignment="Top" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="46,0,0,396" Name="textBlock2" Text="Password" VerticalAlignment="Bottom" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+            <Button Content="Nouveau compte" Height="72" HorizontalAlignment="Left" Margin="33,549,0,0" Name="buttonCreateNewAccount" VerticalAlignment="Top" Width="398" Click="buttonCreateNewAccount_Click" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="46,75,0,0" Name="textBlock1" Text="Pseudo" VerticalAlignment="Top" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="46,0,0,396" Name="textBlock2" Text="Mot de passe" VerticalAlignment="Bottom" Foreground="White" FontWeight="Normal" FontFamily="Verdana" FontSize="24" />
         </Grid>
     </Grid>
 </phone:PhoneApplicationPage>

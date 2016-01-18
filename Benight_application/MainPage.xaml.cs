@@ -28,6 +28,7 @@ namespace Benight_application
 
         //    SupportedOrientations = SupportedPageOrientation.Portrait | SupportedPageOrientation.Landscape;
         //    browser.Loaded += WebBrowser_OnLoaded;
+
         }
 
         //public async void LoadFB()
@@ -111,18 +112,28 @@ namespace Benight_application
 
         private async void buttonSignIn_Click(object sender, RoutedEventArgs e)
         {
-            var user = new ParseUser();
+            //TODO: delete query
+            //var users = await (from user in ParseUser.Query
+            //                   where user.Get<string>("username") == "totoro"
+            //                   select user).FindAsync();
+
+            var query = ParseUser.Query;
+            IEnumerable<ParseObject> results = await query.FindAsync();
+
+            var queryEvent = ParseObject.GetQuery(className:"Event");
+            queryEvent.OrderByDescending("date");
+            IEnumerable<ParseObject> resultsEvent = await queryEvent.FindAsync();
 
             try
-            {
-                await ParseUser.LogInAsync(logUserName.Text, logPassword.Text);
+            {                
+                await ParseUser.LogInAsync(logUserName.Text, logPassword2.Password.ToString());
                 // Login was successful.
                 NavigationService.Navigate(new Uri("/Overview.xaml", UriKind.Relative));
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 // The login failed. Check the error to see why.
-                MessageBox.Show("Username ou mot de passe incorect./n" + exc);
+                MessageBox.Show("Username ou mot de passe incorect.");
             }
         }
 
@@ -130,10 +141,14 @@ namespace Benight_application
         {
         }
 
-
         private void buttonCreateNewAccount_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Registration.xaml", UriKind.Relative));
+        }
+
+        private void buttonForget_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ForgetPassword.xaml", UriKind.Relative));
         }
     }
 }

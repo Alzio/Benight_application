@@ -12,6 +12,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
@@ -22,15 +23,38 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contient le nom de l'application et le titre de la page-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Welcome" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <!--<TextBlock Name="NamePlace" Text="{Binding userPseudo}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>-->
+        <StackPanel Grid.Row="0" Margin="12,17,132,28">
+            <TextBlock Text="{Binding userPseudo}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,71,0"/>
         </StackPanel>
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <!--<ListView x:Name="SampleView" ItemsSource="{Binding ResultsEvent}" >
+            </ListView>-->
+
+            <ListBox Name="EventListBox" Margin="10,-4,10,214">
+                <!--<ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock  Name="TB1" Grid.Column="1" />-->
+                            <!--<TextBlock Text="{Binding My_EventName}"  Name="TB2" Grid.Column="2" />--><!--
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>-->
+                <!--<ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding My_EventName}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>-->
+            </ListBox>
+
         </Grid>
-        <Button Content="Log Out" HorizontalAlignment="Left" Margin="348,10,0,0" VerticalAlignment="Top" Click="ButtonLogOut_Click"/>
+
+        <Button Content="Déconnexion" HorizontalAlignment="Left" Margin="289,10,0,0" VerticalAlignment="Top" Click="ButtonLogOut_Click" Width="191"/>
     </Grid>
 
 </phone:PhoneApplicationPage>
